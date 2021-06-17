@@ -3,6 +3,7 @@
 namespace NovaKit\Fields\Mixins\Tests\Feature;
 
 use Laravel\Nova\Fields\Text;
+use NovaKit\Fields\Mixins\AsArrayObject;
 use NovaKit\Fields\Mixins\Tests\TestCase;
 
 class CallableMixinTest extends TestCase
@@ -16,6 +17,14 @@ class CallableMixinTest extends TestCase
 
         $this->assertSame('name', $field->attribute);
         $this->assertSame(['Taylor Otwell', 'David Hemphill', 'Mior Muhammad Zaki'], $field->suggestions);
+    }
+
+    /** @test */
+    public function it_can_handle_callable_string_class_name()
+    {
+        $field = Text::make('Name', 'profile.name')->apply(AsArrayObject::class);
+
+        $this->assertSame('profile->name', $field->attribute);
     }
 
     /** @test */
