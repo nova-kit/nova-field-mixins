@@ -38,6 +38,16 @@
     "config": {
         "sort-packages": true
     },
+    "extra": {
+        "branch-alias": {
+          "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "NovaKit\\Fields\\Mixins\\MixinServiceProvider"
+            ]
+        }
+    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
