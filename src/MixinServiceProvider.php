@@ -2,8 +2,8 @@
 
 namespace NovaKit\Fields\Mixins;
 
-use InvalidArgumentException;
 use Illuminate\Support\ServiceProvider;
+use InvalidArgumentException;
 use Laravel\Nova\Fields\Field;
 
 class MixinServiceProvider extends ServiceProvider
@@ -16,11 +16,11 @@ class MixinServiceProvider extends ServiceProvider
     public function register()
     {
         Field::macro('apply', function ($mixin, ...$parameters) {
-            if (is_string($mixin) && class_exists($mixin)) {
-                $mixin = new $mixin;
+            if (\is_string($mixin) && class_exists($mixin)) {
+                $mixin = new $mixin();
             }
 
-            if (! is_callable($mixin)) {
+            if (! \is_callable($mixin)) {
                 throw new InvalidArgumentException('Unable to mixin non-callable $mixin');
             }
 

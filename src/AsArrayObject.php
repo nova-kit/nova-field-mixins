@@ -10,7 +10,6 @@ class AsArrayObject
     /**
      * Bootstrap the mixin from callable.
      *
-     * @param  \Laravel\Nova\Fields\Field  $field
      * @return void
      */
     public function __invoke(Field $field)

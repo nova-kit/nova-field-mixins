@@ -3,8 +3,6 @@
 namespace NovaKit\Fields\Mixins\Tests\Feature;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use NovaKit\Fields\Mixins\AsArrayObject;
@@ -31,8 +29,7 @@ class AsArrayObjectTest extends TestCase
             'profile->name' => 'Taylor Otwell',
         ]);
 
-        $model = new class extends Model
-        {
+        $model = new class() extends Model {
             protected $casts = [
                 'profile' => \Illuminate\Database\Eloquent\Casts\AsArrayObject::class,
             ];

@@ -19,5 +19,4 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             MixinServiceProvider::class,
         ];
     }
-
 }
