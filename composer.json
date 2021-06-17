@@ -1,0 +1,43 @@
+{
+    "name": "nova-kit/nova-field-mixins",
+    "description": "Laravel Nova Field Mixins",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mior Muhammad Zaki",
+            "email": "crynobone@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "NovaKit\\Fields\\Mixins\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NovaKit\\Fields\\Mixins\\Tests\\" : "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "illuminate/support": "^8.25"
+    },
+    "require-dev": {
+        "laravel/nova": "^3.0",
+        "orchestra/canvas": "^6.2",
+        "orchestra/testbench": "^6.16"
+    },
+    "repositories": {
+        "nova": {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

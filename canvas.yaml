@@ -1,0 +1,28 @@
+preset: package
+
+namespace: NovaKit\Fields\Mixins
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: NovaKit\Fields\Mixins\Console
+
+model:
+  namespace: NovaKit\Fields\Mixins
+
+provider:
+  namespace: NovaKit\Fields\Mixins
+
+testing:
+  namespace: NovaKit\Fields\Mixins\Tests
+  extends:
+    feature: NovaKit\Fields\Mixins\TestCase
