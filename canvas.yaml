@@ -25,4 +25,4 @@ provider:
 testing:
   namespace: NovaKit\Fields\Mixins\Tests
   extends:
-    feature: NovaKit\Fields\Mixins\TestCase
+    feature: NovaKit\Fields\Mixins\Tests\TestCase
