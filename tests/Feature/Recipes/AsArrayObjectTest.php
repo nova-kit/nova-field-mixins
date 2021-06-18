@@ -5,7 +5,7 @@ namespace NovaKit\Fields\Mixins\Tests\Feature;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use NovaKit\Fields\Mixins\AsArrayObject;
+use NovaKit\Fields\Mixins\Recipes\AsArrayObject;
 use NovaKit\Fields\Mixins\Tests\TestCase;
 
 class AsArrayObjectTest extends TestCase

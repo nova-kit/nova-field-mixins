@@ -1,6 +1,6 @@
 <?php
 
-namespace NovaKit\Fields\Mixins;
+namespace NovaKit\Fields\Mixins\Recipes;
 
 use Illuminate\Support\Str;
 use Laravel\Nova\Fields\Field;
