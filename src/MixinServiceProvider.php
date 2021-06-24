@@ -15,6 +15,16 @@ class MixinServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        //
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
         Field::macro('apply', function ($mixin, ...$parameters) {
             if (\is_string($mixin) && class_exists($mixin)) {
                 $mixin = new $mixin();
@@ -28,15 +38,5 @@ class MixinServiceProvider extends ServiceProvider
 
             return $this;
         });
-    }
-
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
     }
 }
