@@ -55,3 +55,16 @@ use Laravel\Nova\Fields\DateTime;
 DateTime::make('Created At')->apply(StandardDateTime::class),
 DateTime::make('Updated At')->apply(StandardDateTime::class),
 ```
+
+### Available Mixin
+
+#### Handle `AsArrayobject` Cast
+
+This package provide a default implement casting for `AsArrayObject`.
+
+```php
+use Laravel\Nova\Fields\Text;
+use NovaKit\Fields\Mixins\AsArrayObject;
+
+Text::make('Name', 'profile.name')->apply(new AsArrayObject()),
+```
