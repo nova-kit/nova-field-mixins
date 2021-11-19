@@ -27,7 +27,7 @@ class MixinServiceProvider extends ServiceProvider
     {
         Field::macro('apply', function ($mixin, ...$parameters) {
             if (\is_string($mixin) && class_exists($mixin)) {
-                $mixin = new $mixin();
+                $mixin = app($mixin);
             }
 
             if (! \is_callable($mixin)) {
