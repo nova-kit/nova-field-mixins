@@ -16,7 +16,7 @@ class AsArrayObject
         $field->resolveUsing(function ($model, $attribute) {
             return data_get($model, $attribute);
         })->fillUsing(function ($request, $model, $attribute, $requestAttribute) {
-            data_set($model, $attribute, $request->all()[$requestAttribute ?? $attribute] ?? null);
+            data_set($model, $attribute, $request->{$requestAttribute ?? $attribute} ?? null);
         });
     }
 }
