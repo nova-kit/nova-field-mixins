@@ -14,6 +14,8 @@ class AsArrayObject
      */
     public function __invoke(Field $field)
     {
+        $field->attribute = (string) Str::of($field->attribute)->replace('->', '.');
+
         $field->resolveUsing(function ($value, $model, $attribute) {
             return data_get($model, $attribute);
         })->fillUsing(function ($request, $model, $attribute, $requestAttribute) {
