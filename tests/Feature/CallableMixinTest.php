@@ -24,7 +24,7 @@ class CallableMixinTest extends TestCase
     {
         $field = Text::make('Name', 'profile.name')->apply(AsArrayObject::class);
 
-        $this->assertSame('profile->name', $field->attribute);
+        $this->assertSame('profile.name', $field->attribute);
     }
 
     /** @test */

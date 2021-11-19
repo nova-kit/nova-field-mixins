@@ -15,7 +15,7 @@ class AsArrayObjectTest extends TestCase
     {
         $field = Text::make('Name', 'profile.name')->apply(new AsArrayObject());
 
-        $this->assertSame('profile->name', $field->attribute);
+        $this->assertSame('profile.name', $field->attribute);
     }
 
     /** @test */
@@ -26,7 +26,7 @@ class AsArrayObjectTest extends TestCase
         $request = NovaRequest::create('/nova-api/users/1', 'PUT', [
             'editing' => true,
             'editMode' => 'update',
-            'profile->name' => 'Taylor Otwell',
+            'profile.name' => 'Taylor Otwell',
         ]);
 
         $model = new class() extends Model {
@@ -35,7 +35,9 @@ class AsArrayObjectTest extends TestCase
             ];
         };
 
-        $field->fillInto($request, $model, 'profile->name');
+        $field->fillInto($request, $model, 'profile.name');
+
+        ray($model);
 
         $this->assertSame('Taylor Otwell', $model['profile']['name']);
     }
