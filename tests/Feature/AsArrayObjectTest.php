@@ -26,7 +26,7 @@ class AsArrayObjectTest extends TestCase
         $request = NovaRequest::create('/nova-api/users/1', 'PUT', [
             'editing' => true,
             'editMode' => 'update',
-            'profile.name' => 'Taylor Otwell',
+            'profile_name' => 'Taylor Otwell',
         ]);
 
         $model = new class() extends Model {
