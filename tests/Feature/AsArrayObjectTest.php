@@ -37,8 +37,6 @@ class AsArrayObjectTest extends TestCase
 
         $field->fillInto($request, $model, 'profile.name');
 
-        ray($model);
-
         $this->assertSame('Taylor Otwell', $model['profile']['name']);
     }
 }
