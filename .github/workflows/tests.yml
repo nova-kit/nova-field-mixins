@@ -25,7 +25,7 @@ jobs:
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} with Nova {{ matrix.nova }} on ${{ matrix.os }}
+    name: PHP${{ matrix.php }} with Nova ${{ matrix.nova }} on ${{ matrix.os }}
 
     steps:
       - name: "Checkout Repository"
@@ -43,7 +43,7 @@ jobs:
 
       - name: "Setup CI Authentication"
         run: |
-          composer require "laravel/nova:${{ matrix.nova }}"  --no-interaction --no-update
+          composer require "laravel/nova:^${{ matrix.nova }}"  --no-interaction --no-update
           composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USERNAME }} ${{ secrets.NOVA_PASSWORD }}
 
       - name: Install dependencies
