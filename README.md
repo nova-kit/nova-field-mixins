@@ -41,7 +41,7 @@ class StandardDateTime
 {
     public function __invoke(Field $field)
     {
-        $field->sortable()->firstDayOfWeek(1);
+        $field->sortable()->displayUsing(fn ($d) => $d?->diffForHumans());
     }
 }
 ```
