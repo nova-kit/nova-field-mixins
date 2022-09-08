@@ -24,8 +24,8 @@ Laravel Nova Field Mixins is useful to apply set common set of configuration to 
 ```php
 use Laravel\Nova\Fields\DateTime;
 
-DateTime::make('Created At')->sortable()->firstDayOfWeek(1),
-DateTime::make('Updated At')->sortable()->firstDayOfWeek(1),
+DateTime::make('Created At')->sortable()->displayUsing(fn ($d) => $d?->diffForHumans()),
+DateTime::make('Updated At')->sortable()->displayUsing(fn ($d) => $d?->diffForHumans()),
 ```
 
 By adding following class `App\Nova\Fields\Mixins\StandardDateTime`:
