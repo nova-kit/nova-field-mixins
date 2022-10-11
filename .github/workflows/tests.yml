@@ -20,7 +20,6 @@ jobs:
           - "8.0"
           - "8.1"
         nova:
-          - "3.0"
           - "4.0"
         experimental:
           - false
@@ -43,7 +42,7 @@ jobs:
 
       - name: "Setup CI Authentication"
         run: |
-          composer require "laravel/nova:^${{ matrix.nova }}"  --no-interaction --no-update
+          composer require "laravel/nova:~${{ matrix.nova }}"  --no-interaction --no-update
           composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USERNAME }} ${{ secrets.NOVA_PASSWORD }}
 
       - name: Install dependencies

@@ -28,7 +28,7 @@
         "laravel/nova": "^4.0",
         "nunomaduro/larastan": "^1.0.1 || ^2.0.1",
         "orchestra/canvas": "^6.2 || ^7.0",
-        "orchestra/testbench": "^6.23 || ^7.0"
+        "orchestra/testbench": "^6.25.1 || ^7.10.1"
     },
     "repositories": {
         "nova": {
@@ -48,6 +48,9 @@
                 "NovaKit\\Fields\\Mixins\\MixinServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi"
     },
     "prefer-stable": true,
     "minimum-stability": "dev"
