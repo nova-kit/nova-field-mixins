@@ -39,5 +39,13 @@ class MixinServiceProvider extends ServiceProvider
 
             return $this;
         });
+
+        Field::macro('fromArrayObject', function () {
+            $mixin = app(AsArrayObject::class);
+
+            $mixin($this);
+
+            return $this;
+        });
     }
 }
