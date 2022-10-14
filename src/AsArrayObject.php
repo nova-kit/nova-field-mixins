@@ -17,7 +17,7 @@ class AsArrayObject
         $field->attribute = (string) Str::of($field->attribute)->replace('->', '.');
 
         $field->fillUsing(function ($request, $model, $attribute, $requestAttribute) use ($field) {
-            $value =  $request->input((string) Str::of($requestAttribute ?? $attribute)->replace('.', '_'));
+            $value = $request->input((string) Str::of($requestAttribute ?? $attribute)->replace('.', '_'));
 
             data_set($model, $attribute, (! $field->isValidNullValue($value) ? $value : null));
         });
