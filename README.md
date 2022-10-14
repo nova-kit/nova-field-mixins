@@ -68,3 +68,12 @@ use NovaKit\Fields\Mixins\AsArrayObject;
 
 Text::make('Name', 'profile.name')->apply(new AsArrayObject()),
 ```
+
+You can also simplify this by using `fromArrayObject` macro.
+
+```php
+use Laravel\Nova\Fields\Text;
+
+Text::make('Name', 'profile.name')->fromArrayObject(),
+```
+
