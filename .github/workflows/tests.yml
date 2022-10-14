@@ -19,12 +19,10 @@ jobs:
           - "7.4"
           - "8.0"
           - "8.1"
-        nova:
-          - "4.0"
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} with Nova ${{ matrix.nova }} on ${{ matrix.os }}
+    name: PHP${{ matrix.php }} with Nova 4 on ${{ matrix.os }}
 
     steps:
       - name: "Checkout Repository"
@@ -42,7 +40,6 @@ jobs:
 
       - name: "Setup CI Authentication"
         run: |
-          composer require "laravel/nova:~${{ matrix.nova }}"  --no-interaction --no-update
           composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USERNAME }} ${{ secrets.NOVA_PASSWORD }}
 
       - name: Install dependencies
@@ -50,6 +47,9 @@ jobs:
         with:
           dependency-versions: "locked"
           composer-options: "--prefer-dist --no-cache"
+
+      - name: Installed dependencies
+        run: composer show -D
 
       - name: Execute tests
         run: vendor/bin/phpunit
