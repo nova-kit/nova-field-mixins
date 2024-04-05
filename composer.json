@@ -24,15 +24,15 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "illuminate/support": "^8.67 || ^9.0 || ^10.0",
+        "illuminate/support": "^8.67 || ^9.0 || ^10.0 || ^11.0",
         "laravel/nova": "^4.14"
     },
     "require-dev": {
         "nova-kit/nova-packages-tool": "^1.3.4",
         "nunomaduro/larastan": "^1.0.1 || ^2.0.1",
-        "orchestra/canvas": "^6.2 || ^7.0 || ^8.0",
-        "orchestra/testbench": "^6.38 || ^7.30 || ^8.10",
-        "phpunit/phpunit": "^9.6"
+        "orchestra/canvas": "^6.2 || ^7.0 || ^8.0 || ^9.0",
+        "orchestra/testbench": "^6.38 || ^7.30 || ^8.10 || ^9.0",
+        "phpunit/phpunit": "^9.6 || ^10.0 || ^11.0"
     },
     "repositories": {
         "nova": {
