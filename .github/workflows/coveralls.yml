@@ -13,7 +13,7 @@ jobs:
         os:
           - "ubuntu-latest"
         php:
-          - "8.0"
+          - 8.2
         dependencies:
           - "locked"
         experimental:
@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -37,7 +37,7 @@ jobs:
           composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USERNAME }} ${{ secrets.NOVA_PASSWORD }}
 
       - name: Install dependencies
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: "locked"
           composer-options: "--prefer-dist --no-cache"

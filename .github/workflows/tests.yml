@@ -3,8 +3,7 @@ name: tests
 on:
   push:
   pull_request:
-  schedule:
-    - cron: '0 0 * * 3'
+  workflow_dispatch:
 
 jobs:
   laravel-tests:
@@ -15,11 +14,12 @@ jobs:
         os:
           - "ubuntu-latest"
         php:
-          - "7.3"
-          - "7.4"
+          - 7.3
+          - 7.4
           - "8.0"
-          - "8.1"
-          - "8.2"
+          - 8.1
+          - 8.2
+          - 8.3
         experimental:
           - false
 
@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: "Checkout Repository"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -44,7 +44,7 @@ jobs:
           composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USERNAME }} ${{ secrets.NOVA_PASSWORD }}
 
       - name: Install dependencies
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: "locked"
           composer-options: "--prefer-dist --no-cache"
