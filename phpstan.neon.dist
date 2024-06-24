@@ -6,5 +6,7 @@ parameters:
   # The level 8 is the highest level
   level: 6
 
-  checkMissingIterableValueType: false
+  ignoreErrors:
+    - identifier: missingType.iterableValue
+
   reportUnmatchedIgnoredErrors: false
