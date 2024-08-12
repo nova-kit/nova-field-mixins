@@ -1,6 +1,6 @@
 <?php
 
-namespace NovaKit\Fields\Mixins\Tests;
+namespace Tests;
 
 use Orchestra\Testbench\Concerns\WithWorkbench;
 

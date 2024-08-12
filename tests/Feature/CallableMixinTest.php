@@ -1,40 +1,29 @@
 <?php
 
-namespace NovaKit\Fields\Mixins\Tests\Feature;
-
 use Laravel\Nova\Fields\Text;
 use NovaKit\Fields\Mixins\AsArrayObject;
-use NovaKit\Fields\Mixins\Tests\TestCase;
 
-class CallableMixinTest extends TestCase
-{
-    /** @test */
-    public function it_can_apply_with_parameters()
+it('can apply with parameters', function () {
+    $field = Text::make('Name')->apply(function ($field, $suggestions) {
+        $field->suggestions($suggestions);
+    }, ['Taylor Otwell', 'David Hemphill', 'Mior Muhammad Zaki']);
+
+    $this->assertSame('name', $field->attribute);
+    $this->assertSame(['Taylor Otwell', 'David Hemphill', 'Mior Muhammad Zaki'], $field->suggestions);
+});
+
+it('can handle callable string class name', function () {
+    $field = Text::make('Name', 'profile.name')->apply(AsArrayObject::class);
+
+    $this->assertSame('profile.name', $field->attribute);
+});
+
+it('cannot handle non callable object', function () {
+    $this->expectException('InvalidArgumentException');
+    $this->expectExceptionMessage('Unable to mixin non-callable $mixin');
+
+    $field = Text::make('Name')->apply(new class
     {
-        $field = Text::make('Name')->apply(function ($field, $suggestions) {
-            $field->suggestions($suggestions);
-        }, ['Taylor Otwell', 'David Hemphill', 'Mior Muhammad Zaki']);
-
-        $this->assertSame('name', $field->attribute);
-        $this->assertSame(['Taylor Otwell', 'David Hemphill', 'Mior Muhammad Zaki'], $field->suggestions);
-    }
-
-    /** @test */
-    public function it_can_handle_callable_string_class_name()
-    {
-        $field = Text::make('Name', 'profile.name')->apply(AsArrayObject::class);
-
-        $this->assertSame('profile.name', $field->attribute);
-    }
-
-    /** @test */
-    public function it_cannot_handle_non_callable_object()
-    {
-        $this->expectException('InvalidArgumentException');
-        $this->expectExceptionMessage('Unable to mixin non-callable $mixin');
-
-        $field = Text::make('Name')->apply(new class {
-            //
-        });
-    }
-}
+        //
+    });
+});
