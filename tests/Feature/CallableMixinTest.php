@@ -19,11 +19,8 @@ it('can handle callable string class name', function () {
 });
 
 it('cannot handle non callable object', function () {
-    $this->expectException('InvalidArgumentException');
-    $this->expectExceptionMessage('Unable to mixin non-callable $mixin');
-
     $field = Text::make('Name')->apply(new class
     {
         //
     });
-});
+})->throws(InvalidArgumentException::class, 'Unable to mixin non-callable $mixin');
