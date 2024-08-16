@@ -2,12 +2,12 @@
 Laravel Nova Field Mixins
 ==============
 
-[![tests](https://github.com/nova-kit/nova-field-mixins/workflows/tests/badge.svg?branch=master)](https://github.com/nova-kit/nova-field-mixins/actions?query=workflow%3Atests+branch%3Amaster)
+[![tests](https://github.com/nova-kit/nova-field-mixins/workflows/tests/badge.svg?branch=2.x)](https://github.com/nova-kit/nova-field-mixins/actions?query=workflow%3Atests+branch%3A2.x)
 [![Latest Stable Version](https://poser.pugx.org/nova-kit/nova-field-mixins/v/stable)](https://packagist.org/packages/nova-kit/nova-field-mixins)
 [![Total Downloads](https://poser.pugx.org/nova-kit/nova-field-mixins/downloads)](https://packagist.org/packages/nova-kit/nova-field-mixins)
 [![Latest Unstable Version](https://poser.pugx.org/nova-kit/nova-field-mixins/v/unstable)](https://packagist.org/packages/nova-kit/nova-field-mixins)
 [![License](https://poser.pugx.org/nova-kit/nova-field-mixins/license)](https://packagist.org/packages/nova-kit/nova-field-mixins)
-[![Coverage Status](https://coveralls.io/repos/github/nova-kit/nova-field-mixins/badge.svg?branch=master)](https://coveralls.io/github/nova-kit/nova-field-mixins?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/nova-kit/nova-field-mixins/badge.svg?branch=2.x)](https://coveralls.io/github/nova-kit/nova-field-mixins?branch=2.x)
 
 ## Installation 
 
