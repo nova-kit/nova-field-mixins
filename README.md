@@ -28,7 +28,7 @@ DateTime::make('Created At')->sortable()->displayUsing(fn ($d) => $d?->diffForHu
 DateTime::make('Updated At')->sortable()->displayUsing(fn ($d) => $d?->diffForHumans()),
 ```
 
-By adding following class `App\Nova\Fields\Mixins\StandardDateTime`:
+By adding the following class `App\Nova\Fields\Mixins\StandardDateTime`:
 
 ```php
 <?php 
