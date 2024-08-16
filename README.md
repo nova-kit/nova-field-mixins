@@ -11,7 +11,7 @@ Laravel Nova Field Mixins
 
 ## Installation 
 
-To install through composer, run the following command from terminal:
+To install through composer, run the following command from the terminal:
 
 ```bash 
 composer require "nova-kit/nova-field-mixins"
@@ -19,7 +19,7 @@ composer require "nova-kit/nova-field-mixins"
 
 ## Usages
 
-Laravel Nova Field Mixins is useful to apply set common set of configuration to Field without repeating it. E.g:
+Laravel Nova Field Mixins are useful for applying a common set of configurations to a Field without repeating it. E.g:
 
 ```php
 use Laravel\Nova\Fields\DateTime;
@@ -46,7 +46,7 @@ class StandardDateTime
 }
 ```
 
-You can now write above example as:
+You can now write the above example as:
 
 ```php
 use App\Nova\Fields\Mixins\StandardDateTime;
@@ -60,7 +60,7 @@ DateTime::make('Updated At')->apply(StandardDateTime::class),
 
 #### Handle `AsArrayobject` Cast
 
-This package provide a default implement casting for `AsArrayObject`.
+This package provides a default implement casting for `AsArrayObject`.
 
 ```php
 use Laravel\Nova\Fields\Text;
