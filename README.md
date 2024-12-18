@@ -2,7 +2,7 @@
 Laravel Nova Field Mixins
 ==============
 
-[![tests](https://github.com/nova-kit/nova-field-mixins/workflows/tests/badge.svg?branch=2.x)](https://github.com/nova-kit/nova-field-mixins/actions?query=workflow%3Atests+branch%3A2.x)
+[![tests](https://github.com/nova-kit/nova-field-mixins/actions/workflows/tests.yml/badge.svg?branch=2.x)](https://github.com/nova-kit/nova-field-mixins/actions/workflows/tests.yml)
 [![Latest Stable Version](https://poser.pugx.org/nova-kit/nova-field-mixins/v/stable)](https://packagist.org/packages/nova-kit/nova-field-mixins)
 [![Total Downloads](https://poser.pugx.org/nova-kit/nova-field-mixins/downloads)](https://packagist.org/packages/nova-kit/nova-field-mixins)
 [![Latest Unstable Version](https://poser.pugx.org/nova-kit/nova-field-mixins/v/unstable)](https://packagist.org/packages/nova-kit/nova-field-mixins)
