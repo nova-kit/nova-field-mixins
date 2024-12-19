@@ -2,16 +2,16 @@
 Laravel Nova Field Mixins
 ==============
 
-[![tests](https://github.com/nova-kit/nova-field-mixins/workflows/tests/badge.svg?branch=master)](https://github.com/nova-kit/nova-field-mixins/actions?query=workflow%3Atests+branch%3Amaster)
+[![tests](https://github.com/nova-kit/nova-field-mixins/actions/workflows/tests.yml/badge.svg?branch=2.x)](https://github.com/nova-kit/nova-field-mixins/actions/workflows/tests.yml)
 [![Latest Stable Version](https://poser.pugx.org/nova-kit/nova-field-mixins/v/stable)](https://packagist.org/packages/nova-kit/nova-field-mixins)
 [![Total Downloads](https://poser.pugx.org/nova-kit/nova-field-mixins/downloads)](https://packagist.org/packages/nova-kit/nova-field-mixins)
 [![Latest Unstable Version](https://poser.pugx.org/nova-kit/nova-field-mixins/v/unstable)](https://packagist.org/packages/nova-kit/nova-field-mixins)
 [![License](https://poser.pugx.org/nova-kit/nova-field-mixins/license)](https://packagist.org/packages/nova-kit/nova-field-mixins)
-[![Coverage Status](https://coveralls.io/repos/github/nova-kit/nova-field-mixins/badge.svg?branch=master)](https://coveralls.io/github/nova-kit/nova-field-mixins?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/nova-kit/nova-field-mixins/badge.svg?branch=2.x)](https://coveralls.io/github/nova-kit/nova-field-mixins?branch=2.x)
 
 ## Installation 
 
-To install through composer, run the following command from terminal:
+To install through composer, run the following command from the terminal:
 
 ```bash 
 composer require "nova-kit/nova-field-mixins"
@@ -19,7 +19,7 @@ composer require "nova-kit/nova-field-mixins"
 
 ## Usages
 
-Laravel Nova Field Mixins is useful to apply set common set of configuration to Field without repeating it. E.g:
+Laravel Nova Field Mixins are useful for applying a common set of configurations to a Field without repeating it. E.g:
 
 ```php
 use Laravel\Nova\Fields\DateTime;
@@ -28,7 +28,7 @@ DateTime::make('Created At')->sortable()->displayUsing(fn ($d) => $d?->diffForHu
 DateTime::make('Updated At')->sortable()->displayUsing(fn ($d) => $d?->diffForHumans()),
 ```
 
-By adding following class `App\Nova\Fields\Mixins\StandardDateTime`:
+By adding the following class `App\Nova\Fields\Mixins\StandardDateTime`:
 
 ```php
 <?php 
@@ -46,7 +46,7 @@ class StandardDateTime
 }
 ```
 
-You can now write above example as:
+You can now write the above example as:
 
 ```php
 use App\Nova\Fields\Mixins\StandardDateTime;
@@ -60,7 +60,7 @@ DateTime::make('Updated At')->apply(StandardDateTime::class),
 
 #### Handle `AsArrayobject` Cast
 
-This package provide a default implement casting for `AsArrayObject`.
+This package provides a default implement casting for `AsArrayObject`.
 
 ```php
 use Laravel\Nova\Fields\Text;

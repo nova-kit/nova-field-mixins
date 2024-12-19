@@ -28,8 +28,8 @@
     },
     "require-dev": {
         "larastan/larastan": "^2.4",
-        "laravel/nova": "dev-develop",
-        "laravel/nova-devtool": "^1.0",
+        "laravel/nova": "^5.0",
+        "laravel/nova-devtool": "^1.1",
         "laravel/pint": "^1.17",
         "orchestra/testbench": "^8.20 || ^9.0",
         "phpstan/phpstan": "^1.11",
@@ -39,14 +39,7 @@
         "laravel/nova": "<5.0.0 || >=6.0.0"
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/laravel/nova"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/laravel/nova-devtool"
-        }
+        { "type": "composer", "url": "https://nova.laravel.com" }
     ],
     "config": {
         "sort-packages": true,
@@ -56,7 +49,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "2.x-dev"
+            "dev-develop": "3.x-dev"
         },
         "laravel": {
             "providers": [
