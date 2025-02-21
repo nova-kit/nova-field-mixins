@@ -7,12 +7,10 @@ on:
 
 jobs:
   laravel-tests:
-    runs-on: ${{ matrix.os }}
+    runs-on: "ubuntu-latest"
     continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
-        os:
-          - "ubuntu-latest"
         php:
           - 8.1
           - 8.2
@@ -21,7 +19,7 @@ jobs:
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} with Nova 4 on ${{ matrix.os }}
+    name: PHP:${{ matrix.php }} / Nova:5
 
     steps:
       - name: "Checkout Repository"
@@ -44,7 +42,7 @@ jobs:
       - name: Install dependencies
         uses: "ramsey/composer-install@v3"
         with:
-          dependency-versions: "locked"
+          dependency-versions: "highest"
           composer-options: "--prefer-dist --no-cache"
 
       - name: Installed dependencies
