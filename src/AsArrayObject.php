@@ -12,11 +12,11 @@ class AsArrayObject
      *
      * @return void
      */
-    public function __invoke(Field $field)
+    public function __invoke(Field $field): void
     {
         $field->attribute = (string) Str::of($field->attribute)->replace('->', '.');
 
-        $field->fillUsing(function ($request, $model, $attribute, $requestAttribute) use ($field) {
+        $field->fillUsing(static function ($request, $model, $attribute, $requestAttribute) use ($field) {
             /** @phpstan-ignore nullCoalesce.variable */
             $value = $request->input((string) Str::of($requestAttribute ?? $attribute)->replace('.', '_'));
 

@@ -13,7 +13,7 @@ class MixinServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }
@@ -23,7 +23,7 @@ class MixinServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         Field::macro('apply', function ($mixin, ...$parameters) {
             /** @var class-string|callable $mixin */
