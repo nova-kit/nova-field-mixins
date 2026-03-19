@@ -40,10 +40,13 @@
         { "type": "composer", "url": "https://nova.laravel.com" }
     ],
     "config": {
-        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
-        }
+        },
+        "audit": {
+            "block-insecure": false
+        },
+        "sort-packages": true
     },
     "extra": {
         "branch-alias": {
